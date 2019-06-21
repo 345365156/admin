@@ -3,7 +3,7 @@ import { env } from './config'
 import { Message } from 'element-ui'
 
 // 请求地址 devMode：开发环境  testMode：测试环境  prodMode：生产环境
-export const baseURL = env.deploy.testMode.server
+export const baseURL = env.deploy.mockMode.server
 
 function apiAxios(method, url, params, response, contentType = 'application/json;charset=utf-8') {
   axios({

@@ -161,9 +161,13 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          this.$api.post('staff/login', this.loginForm, res => {
+          this.$api.post('admin/login', this.loginForm, res => {
             localStorage.setItem('userInfo', JSON.stringify(res.data))
-            this.$router.push('/')
+            if (res.data.code === 0) {
+              this.$router.push('/')
+            } else {
+              this.$message.error(res.data.msg)
+            }
           })
         } else {
           this.$message.error('error submit.')

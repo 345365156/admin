@@ -3,7 +3,10 @@ import Vuex from 'vuex'
 
 // store 模块
 
-// import app from './modules/app.js'
+import getters from './getters'
+import app from './modules/app.js'
+import settings from './modules/settings'
+import user from './modules/user'
 
 Vue.use(Vuex)
 
@@ -46,9 +49,12 @@ const defaultOption = {
 
 const store = new Vuex.Store({
   modules: {
-    bak: defaultOption
-    // app: app
-  }
+    bak: defaultOption,
+    app,
+    settings,
+    user
+  },
+  getters
 })
 
 export default store

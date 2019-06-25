@@ -163,7 +163,7 @@ export default {
           this.loading = true
           this.$api.post('admin/login', this.loginForm, res => {
             localStorage.setItem('userInfo', JSON.stringify(res.data))
-            if (res.data.code === 0) {
+            if (res.code === 0) {
               this.$router.push('/')
             } else {
               this.$message.error(res.data.msg)

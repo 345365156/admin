@@ -10,18 +10,24 @@ export const constantRoutes = [
     path: '/login',
     name: 'login',
     component: Login
-  }, {
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/404'),
+  },
+  {
     path: '/',
-    component: Layout
-    // redirect: 'dashboard',
-    // children: [
-    //   {
-    //     path: 'dashboard',
-    //     component: () => import('@/views/dashboard/index'),
-    //     name: 'Dashboard',
-    //     meta: { title: 'dashboard', icon: 'dashboard', noCache: true, affix: true }
-    //   }
-    // ]
+    component: Layout,
+    redirect: 'dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Dashboard',
+        meta: { title: 'dashboard', icon: 'dashboard' }
+      }
+    ]
   }
 ]
 

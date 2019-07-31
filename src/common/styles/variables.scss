@@ -23,6 +23,10 @@ $sideBarWidth: 210px;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+// 我们在Sass中定义实际变量值并将其导出为Javascript。CSS模块有一个简洁的实用工具叫做:export。
+// 该:export指令的工作原理与ES6的export关键字基本相同。
+// 您的Sass代码将导出包含变量名称的对象以在Javascript及其关联值中使用。
+// 这些值都作为字符串导出。
 :export {
   menuText: $menuText;
   menuActiveText: $menuActiveText;

@@ -54,34 +54,17 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/exercise',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/exercise/transform',
+    name: 'Exercise',
+    meta: { title: 'Exercise', icon: 'exercise' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'transform',
+        name: 'transform',
+        component: () => import('@/views/exercise/transform'),
+        meta: { title: 'Transform' }
       }
     ]
   },

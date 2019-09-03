@@ -11,8 +11,16 @@ export default {
   name: 'Dashboard',
   data() {
     return {
-      exercise: ''
+      exercise: '',
+      watchArr: [{
+        name: 'Tom',
+      }],
     }
+  },
+  watch: {
+    watchArr (newVal) {
+      console.log(newVal);
+    },
   },
   methods: {
     arrow() {
@@ -28,6 +36,9 @@ export default {
   created() {
     console.log('created:', this)
     this.arrow()
+    setTimeout(() => {
+      this.$set(this.watchArr, 0, {name: 'Jerry'});
+    }, 3000);
   }
 }
 

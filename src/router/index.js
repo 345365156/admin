@@ -70,6 +70,11 @@ export const constantRoutes = [
         name: 'distinct',
         component: () => import('@/views/exercise/distinct'),
         meta: { title: 'Distinct' }
+      }, {
+        path: 'watchArr',
+        name: 'watchArr',
+        component: () => import('@/views/exercise/watchArr'),
+        meta: { title: 'WatchArr' }
       }
     ]
   },

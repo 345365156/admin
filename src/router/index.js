@@ -65,6 +65,11 @@ export const constantRoutes = [
         name: 'transform',
         component: () => import('@/views/exercise/transform'),
         meta: { title: 'Transform' }
+      }, {
+        path: 'distinct',
+        name: 'distinct',
+        component: () => import('@/views/exercise/distinct'),
+        meta: { title: 'Distinct' }
       }
     ]
   },

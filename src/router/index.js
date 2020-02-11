@@ -75,6 +75,11 @@ export const constantRoutes = [
         name: 'watchArr',
         component: () => import('@/views/exercise/watchArr'),
         meta: { title: 'WatchArr' }
+      }, {
+        path: 'openlayers',
+        name: 'openlayers',
+        component: () => import('@/views/exercise/openlayers'),
+        meta: { title: 'Openlayers' }
       }
     ]
   },

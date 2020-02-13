@@ -75,14 +75,26 @@ export const constantRoutes = [
         name: 'watchArr',
         component: () => import('@/views/exercise/watchArr'),
         meta: { title: 'WatchArr' }
-      }, {
-        path: 'openlayers',
-        name: 'openlayers',
-        component: () => import('@/views/exercise/openlayers'),
-        meta: { title: 'Openlayers' }
       }
     ]
   },
+
+  {
+    path: '/openLayers',
+    component: Layout,
+    redirect: '/openLayers/drawFeatures',
+    name: 'Open Layers',
+    meta: { title: 'Open Layers', icon: 'openLayers' },
+    children: [
+      {
+        path: 'drawFeatures',
+        name: 'drawFeatures',
+        component: () => import('@/views/openLayers/drawFeatures'),
+        meta: { title: 'DrawFeatures' }
+      }
+    ]
+  },
+
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

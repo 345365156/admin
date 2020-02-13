@@ -82,15 +82,25 @@ export const constantRoutes = [
   {
     path: '/openLayers',
     component: Layout,
-    redirect: '/openLayers/drawFeatures',
+    redirect: '/openLayers/drawMap',
     name: 'Open Layers',
     meta: { title: 'Open Layers', icon: 'openLayers' },
     children: [
       {
+        path: 'drawMap',
+        name: 'drawMap',
+        component: () => import('@/views/openLayers/drawMap'),
+        meta: { title: 'DrawMap' }
+      }, {
         path: 'drawFeatures',
         name: 'drawFeatures',
         component: () => import('@/views/openLayers/drawFeatures'),
         meta: { title: 'DrawFeatures' }
+      }, {
+        path: 'drawShape',
+        name: 'drawShape',
+        component: () => import('@/views/openLayers/drawShape'),
+        meta: { title: 'DrawShape' }
       }
     ]
   },

@@ -101,6 +101,11 @@ export const constantRoutes = [
         name: 'drawShape',
         component: () => import('@/views/openLayers/drawShape'),
         meta: { title: 'DrawShape' }
+      }, {
+        path: 'mousePosition',
+        name: 'mousePosition',
+        component: () => import('@/views/openLayers/mousePosition'),
+        meta: { title: 'MousePosition' }
       }
     ]
   },

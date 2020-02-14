@@ -13,6 +13,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import * as filters from './common/filters'
 import '@/assets/icon/index.js'
 
+import ol from 'ol'
+
 Vue.use(Element, {
   size: 'medium', zIndex: 3000,
   i18n: (key, value) => i18n.t(key, value)

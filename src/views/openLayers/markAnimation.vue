@@ -41,6 +41,40 @@
 
     },
     mounted() {
+      console.log(ol)
+
+      // 撒点
+      let anchor = new ol.Feature({
+        geometry: new ol.geom.Polygon([{
+          "name":"电压:10kV,电流:10A",
+          "lat":"22.698915973305702",//维度
+          "lon":"112.25102931261064",//经度
+          "sb":"杆"
+        }])
+      })
+
+      let pointStyle = new ol.style.Style({
+        fill: new ol.style.Fill({
+          color: 'rgba(255, 255, 255, 0.6)'
+        }),
+        stroke: new ol.style.Storke({
+          color: '#319FD3',
+          width: 1
+        }),
+        text: new ol.style.Text({
+          font: '12px',
+          fill: new ol.style.Fill({
+            color: '#000'
+          }),
+          stroke: new ol.style.Storke({
+            color: '#fff',
+            width: 2
+          })
+        })
+      })
+      anchor.setStyle(pointStyle)
+
+
       // 鼠标的坐标
       this.mousePositionControl = new MousePosition({
         coordinateFormat: createStringXY(4),

@@ -90,7 +90,7 @@ export const constantRoutes = [
         path: 'drawMap',
         name: 'drawMap',
         component: () => import('@/views/openLayers/drawMap'),
-        meta: { title: 'DrawMap' }
+        meta: { title: '地图' }
       }, {
         path: 'drawFeatures',
         name: 'drawFeatures',
@@ -102,10 +102,15 @@ export const constantRoutes = [
         component: () => import('@/views/openLayers/drawShape'),
         meta: { title: 'DrawShape' }
       }, {
-        path: 'mousePosition',
-        name: 'mousePosition',
-        component: () => import('@/views/openLayers/mousePosition'),
-        meta: { title: 'MousePosition' }
+        path: 'setPoint',
+        name: 'setPoint',
+        component: () => import('@/views/openLayers/setPoint'),
+        meta: { title: '设置点位' }
+      }, {
+        path: 'markAnimation',
+        name: 'markAnimation',
+        component: () => import('@/views/openLayers/markAnimation'),
+        meta: { title: 'MarkAnimation' }
       }
     ]
   },

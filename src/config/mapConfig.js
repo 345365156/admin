@@ -6,7 +6,7 @@ import XYZ from 'ol/source/XYZ'
 let mapType = 2          //0表示部署的离线瓦片地图，1表示OSM,2表示使用Arcgis在线午夜蓝地图服务
 
 let streetMap = function(){
-  let mapLayer = null;
+  let mapLayer = null
   switch(mapType){
     case 0: // 离线瓦片地图
       mapLayer = new TileLayer({

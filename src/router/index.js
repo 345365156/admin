@@ -111,6 +111,11 @@ export const constantRoutes = [
         name: 'markAnimation',
         component: () => import('@/views/openLayers/markAnimation'),
         meta: { title: 'MarkAnimation' }
+      }, {
+        path: 'yn',
+        name: 'yn',
+        component: () => import('@/views/openLayers/yn'),
+        meta: { title: 'yn' }
       }
     ]
   },

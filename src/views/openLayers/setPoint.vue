@@ -35,55 +35,15 @@
 
     },
     methods: {
-      // setPoint() {
-      //   let lnglats = [ // 点位
-      //     [117.204883, 31.840285],
-      //     [117.2616140654, 31.8626171434],
-      //     [117.2870114613, 31.8588879936],
-      //     [117.2822851546, 31.8862905440]
-      //   ]
-      //
-      //   let featureArr = []; // 容器
-      //
-      //   let anchor = new ol.Feature({
-      //     geometry: new ol.geom.Point([20.1795, 30.1838, 0]),
-      //     // FeatureInfo: {
-      //     //   wiLng: 'wiLng',
-      //     //   wiLat: 'wiLat'
-      //     // }
-      //   })
-      //   // 设置点位的样式
-      //   anchor.setStyle(new ol.style.Style({
-      //     image: new ol.style.Icon({
-      //       src: '@/assets/images/nor.png', // 图片路径
-      //       scale: 0.7 // 图片的缩放
-      //     }),
-      //     //anchor: [0.5, 1]    // 设置图标位置
-      //   }))
-      //   // 点位信息放入容器
-      //   featureArr.push(anchor)
-      //
-      //   // 创建矢量数据源
-      //   let source = new ol.source.Vector()
-      //
-      //   // 需要一个vector的layer来放置图标
-      //   let marksLayer = new ol.layer.Vector({
-      //     source: source,
-      //     zIndex: 99
-      //   })
-      //   this.map.addLayer(marksLayer) // layer加进地图
-      // }
       setPoint() {
         let lnglats = [
-          [120.104883, 30.184028],
+          [120.1797, 30.1824],
           [120.1616140654, 30.1862617143],
           [120.1870114613, 30.1858887993],
           [120.1822851546, 30.1886290544]
         ];
         // 创建一个Feature，并设置好在地图上的位置
-        let anchor = new ol.Feature({
-          geometry: new ol.geom.Point(lnglats[0])
-        });
+        let anchor = new ol.Feature(new ol.geom.Point(lnglats[0]));
         // 样式设置
         anchor.setStyle(new ol.style.Style({
           image: new ol.style.Icon({
@@ -102,8 +62,7 @@
           source: source,
           // zIndex: 99
         })
-
-        this.map.addLayer(layer)
+        this.map.addLayer(layer) // addLayer() v4.6.5版本不支持
       }
     },
     created() {

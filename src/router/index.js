@@ -120,6 +120,21 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/ES6',
+    component: Layout,
+    redirect: '/ES6/class',
+    name: 'ES6',
+    meta: { title: 'ES6', icon: 'ES6' },
+    children: [
+      {
+        path: 'class',
+        name: 'class',
+        component: () => import('@/views/ES6/class'),
+        meta: { title: '类' }
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }

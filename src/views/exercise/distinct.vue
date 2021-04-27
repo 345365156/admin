@@ -16,12 +16,35 @@ export default {
       result: ''
     }
   },
+  created() {
+    const arr1 = Array.from(new Array(100000), (x, index) => {
+      return index
+    })
+
+    const arr2 = Array.from(new Array(50000), (x, index) => {
+      return index + index
+    })
+
+    const start = new Date().getTime()
+    console.log('开始数组去重')
+
+    this.distinct(arr1, arr2)
+
+    console.log('去重后的长度', this.distinct(arr1, arr2).length)
+
+    const end = new Date().getTime()
+    console.log('耗时', end - start)
+    this.result = end - start
+  },
+  mounted() {
+    console.log(this.$route.params.id)
+  },
   methods: {
     distinct(a, b) {
-      let arr = a.concat(b)
-      let result = []
-      let obj = {}
-      for (let i of arr) {
+      const arr = a.concat(b)
+      const result = []
+      const obj = {}
+      for (const i of arr) {
         if (!obj[i]) {
           result.push(i)
           obj[i] = 1
@@ -30,29 +53,6 @@ export default {
 
       return result
     }
-  },
-  created() {
-    const arr1 = Array.from(new Array(100000), (x, index) => {
-      return index
-    })
-
-    const arr2 = Array.from(new Array(50000), (x, index) => {
-      return index+index
-    })
-
-    let start = new Date().getTime()
-    console.log('开始数组去重')
-
-    distinct(arr1, arr2)
-
-    console.log('去重后的长度', distinct(arr1, arr2).length)
-
-    let end = new Date().getTime()
-    console.log('耗时', end - start)
-    this.result = end - start
-  },
-  mounted() {
-      console.log(this.$route.params.id)
   }
 }
 </script>

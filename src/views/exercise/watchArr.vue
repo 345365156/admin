@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>替换数组某一项的值监听方法：</h1>
-    <code>Vue.set(vm.items, indexOfItem, newValue)</code><br/>
+    <code>Vue.set(vm.items, indexOfItem, newValue)</code><br>
     <p>watchArr的第一项的name的值为： {{ watchArr[0].name }}</p>
     <p>watchArr的第二项的name的值为： {{ watchArr[1].name }}</p>
     <p>watchArr的第三项的值为： {{ watchArr[2] }}</p>
@@ -20,9 +20,9 @@ export default {
   data() {
     return {
       watchArr: [{
-        name: 'Tom',
-      },{
-        name: 'Listen',
+        name: 'Tom'
+      }, {
+        name: 'Listen'
       }, 3],
       objVal: {
         name: 'obj',
@@ -31,52 +31,52 @@ export default {
     }
   },
   watch: {
-    watchArr (newVal) {
-      console.log(newVal);
+    watchArr(newVal) {
+      console.log(newVal)
     },
-    objVal:{
-      handler(newVal, oldVal){
+    objVal: {
+      handler(newVal, oldVal) {
         console.log(newVal, oldVal)
       },
-      deep: true, // 深度监听对象的改变
+      deep: true // 深度监听对象的改变
     }
 
-  },
-  methods: {
-    routerChange(id) {
-      id = 123;
-      this.$router.push({
-          path: `/exercise/distinct/${id}`,
-      })
-    },
-    routerChange2(id) {
-      id = 321;
-      this.$router.push({
-          name: 'distinct',
-          params: {
-              id: id
-          }
-      })
-    },
-    routerChange3(id) {
-      this.$router.push({
-          path: 'distinct',
-          query: {
-              id: '321query'
-          }
-      })
-    }
   },
   created() {
     setTimeout(() => {
       // this.watchArr[0] = {name: 'haha'}
       // this.watchArr[1].name = 'hahaha'
       // this.watchArr[1].name = 'hahaha'   //无法触发watch数组绑定的方法
-      this.$set(this.watchArr, 0, {name: 'Jerry'});
-      this.$set(this.watchArr, 1, {name: 'Jerry'});
-      this.$set(this.watchArr, 2, 333); //触发watch数组绑定的方法
+      this.$set(this.watchArr, 0, { name: 'Jerry' })
+      this.$set(this.watchArr, 1, { name: 'Jerry' })
+      this.$set(this.watchArr, 2, 333) // 触发watch数组绑定的方法
       this.objVal.name = 'newName'
-    }, 3000);
+    }, 3000)
+  },
+  methods: {
+    routerChange(id) {
+      id = 123
+      this.$router.push({
+        path: `/exercise/distinct/${id}`
+      })
+    },
+    routerChange2(id) {
+      id = 321
+      this.$router.push({
+        name: 'distinct',
+        params: {
+          id: id
+        }
+      })
+    },
+    routerChange3(id) {
+      this.$router.push({
+        path: 'distinct',
+        query: {
+          id: '321query'
+        }
+      })
+    }
   }
 }
 
